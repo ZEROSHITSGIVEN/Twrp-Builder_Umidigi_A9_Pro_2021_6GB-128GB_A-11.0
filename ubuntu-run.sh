@@ -1,7 +1,8 @@
 echo this can run commands in terminal tho
 sudo apt-get update --fix-missing 
-sudo apt-get install git curl
-sudo curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo 
+sudo apt-get install git wget
+sudo wget https://storage.googleapis.com/git-repo-downloads/repo
+mv repo /bin
 sudo chmod a+x ~/bin/repo 
 repo init -u https://github.com/PitchBlackRecoveryProject/manifest_pb -b android-10.0 
 repo sync
