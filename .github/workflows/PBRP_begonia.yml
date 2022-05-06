@@ -20,7 +20,7 @@ env:
   Rec_ver: 3.0.0
   Rec_url: https://github.com/PitchBlackRecoveryProject/manifest_pb.git -b android-10.0
   device: m10f
-  DT_url: https://github.com/twrpdtgen/android_device_samsung_m10lte/tree/m10ltedx-user-10-QP1A.190711.020-M105GDXU7CUF2-release-keys
+  DT_url: https://github.com/twrpdtgen/android_device_samsung_m10lte
   DT_path: device/samsung/m10f
   ProductFileHeader: omni
   target: recoveryimage
