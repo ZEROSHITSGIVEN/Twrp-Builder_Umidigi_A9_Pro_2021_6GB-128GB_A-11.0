@@ -1,9 +1,4 @@
 name: TWRP Builder
-    
-defaults:
-  run:
-    shell: bash
-      
 
 on:
   workflow_dispatch:
@@ -148,13 +143,3 @@ jobs:
           echo "::group::Out Tree"
           tree -C -L 5
           echo "::endgroup::"
-    - name: "ssh"
-    - uses: fastai/workflows/ssh@master
-      with:
-        ssh_key: ${{ secrets.SSH_KEY }}
-        key_file: id_ecdsa
-    - uses: actions/checkout@v2
-    - run: source ubuntu-run.sh
-    - name: Setup tmate session
-      timeout-minutes: 340
-      uses: mxschmitt/action-tmate@master
