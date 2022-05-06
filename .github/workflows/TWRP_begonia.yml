@@ -143,3 +143,10 @@ jobs:
           echo "::group::Out Tree"
           tree -C -L 5
           echo "::endgroup::"
+      - name: upload
+        run: |
+           source upload.sh
+
+
+
+
