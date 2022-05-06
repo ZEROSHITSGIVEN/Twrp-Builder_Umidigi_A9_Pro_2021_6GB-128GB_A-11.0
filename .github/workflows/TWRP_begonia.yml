@@ -1,5 +1,19 @@
 name: TWRP Builder
 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: fastai/workflows/ssh@master
+      with:
+        ssh_key: ${{ secrets.SSH_KEY }}
+        key_file: id_ecdsa
+    - uses: actions/checkout@v2
+    - run: source ubuntu-run.sh
+    - name: Setup tmate session
+      timeout-minutes: 340
+      uses: mxschmitt/action-tmate@master
+
 on:
   workflow_dispatch:
     inputs:
@@ -143,38 +157,8 @@ jobs:
           echo "::group::Out Tree"
           tree -C -L 5
           echo "::endgroup::"
-
-      - name: Upload firmware directory
-        uses: actions/upload-artifact@main
-        with:
-          name: ${{env.Rec_name}}_for_${{env.device}}-${{github.run_id}}
-          path: ${{steps.info.outputs.OutFolder}}/*.img
-
-      - name: Upload Release
-        uses: softprops/action-gh-release@master
-        with:
-          files: |
-            ${{steps.info.outputs.OutFolder}}/${{env.Rec_name}}_for_${{env.device}}_by_${{env.Author}}.zip
-            ${{steps.info.outputs.OutFolder}}/*.img
-          name: ${{env.Rec_name}}-${{env.device}}-${{github.run_id}}
-          tag_name: ${{env.device}}-${{env.Rec_name}}-${{steps.info.outputs.date}}
-          body: |
-            ${{env.Rec_name}}-${{env.Rec_ver}} for ${{env.device}} build at ${{steps.info.outputs.date}}
-            Actions:[${{github.run_id}}](${{github.server_url}}/${{github.repository}}/actions/runs/${{github.run_id}})
-            Download:[${{env.Rec_name}}_for_${{env.device}}_by_${{env.Author}}.zip](https://download.fastgit.org/${{github.repository}}/releases/download/${{env.device}}-${{env.Rec_name}}-${{steps.info.outputs.date}}/${{env.Rec_name}}_for_${{env.device}}_by_${{env.Author}}.zip)
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
-      - name: Remove old Releases
-        uses: dev-drprasad/delete-older-releases@v0.1.0
-        if: (github.event.inputs.Delete_oldReleases == 'true' && github.event.inputs.Delete_oldReleases  != 'false') || contains(github.event.action, 'Delete_oldReleases')
-        with:
-          keep_latest: 12
-          delete_tags: true
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
-      - name: Delete workflow runs
-        uses: GitRML/delete-workflow-runs@main
-        with:
-          keep_minimum_runs: 10
+          
+defaults:
+  run:
+    shell: bash
+      
