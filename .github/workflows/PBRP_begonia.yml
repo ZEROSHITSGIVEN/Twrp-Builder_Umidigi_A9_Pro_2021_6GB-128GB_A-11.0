@@ -19,9 +19,9 @@ env:
   Rec_name: PBRP
   Rec_ver: 3.0.0
   Rec_url: https://github.com/PitchBlackRecoveryProject/manifest_pb.git -b android-10.0
-  device: m10f
+  device: m10lte
   DT_url: https://github.com/twrpdtgen/android_device_samsung_m10lte
-  DT_path: device/samsung/m10f
+  DT_path: device/samsung/m10lte
   ProductFileHeader: omni
   target: recoveryimage
   WorkSpace: WorkSpace
