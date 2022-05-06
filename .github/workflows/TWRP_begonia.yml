@@ -20,12 +20,12 @@ env:
   Rec_ver: 3.6.0
   Rec_url: https://github.com/RC1844/platform_manifest_twrp_omni.git -b twrp-10.0
   device: m10lte
-  DT_url: https://github.com/twrpdtgen/android_device_samsung_m10lte
+  DT_url: https://github.com/AndVer0/recovery-m10
   DT_path: device/samsung/m10lte
   ProductFileHeader: omni
   target: recoveryimage
   WorkSpace: WorkSpace
-  TZ: Asia/Shanghai
+  TZ: Europe/London
   Author: ${{github.actor}}
   Delete_old: false
 
