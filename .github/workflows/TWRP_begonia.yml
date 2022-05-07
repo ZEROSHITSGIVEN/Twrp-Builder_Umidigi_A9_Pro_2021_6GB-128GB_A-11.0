@@ -29,14 +29,26 @@ env:
   Author: ${{github.actor}}
   Delete_old: false
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   build:
     runs-on: ubuntu-18.04
 
     steps:
-    
+      - uses: fastai/workflows/ssh@master
+        with:
+          ssh_key: ${{ secrets.SSH_KEY }}
+          key_file: id_ecdsa
+      - uses: actions/checkout@v2      
+      - name: Setup tmate session
+          timeout-minutes: 340
+          uses: mxschmitt/action-tmate@master
+
       - name: "Cleanup Environment"
-        uses: rokibhasansagar/slimhub_actions@main
+          uses: rokibhasansagar/slimhub_actions@main
 
       - name: Initializing environment
         run: |
