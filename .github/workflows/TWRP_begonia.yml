@@ -164,7 +164,7 @@ jobs:
             Actions:[${{github.run_id}}](${{github.server_url}}/${{github.repository}}/actions/runs/${{github.run_id}})
             Download:[${{env.Rec_name}}_for_${{env.device}}_by_${{env.Author}}.zip](https://download.fastgit.org/${{github.repository}}/releases/download/${{env.device}}-${{env.Rec_name}}-${{steps.info.outputs.date}}/${{env.Rec_name}}_for_${{env.device}}_by_${{env.Author}}.zip)
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: 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
 
       - name: Remove old Releases
         uses: dev-drprasad/delete-older-releases@v0.1.0
@@ -173,7 +173,7 @@ jobs:
           keep_latest: 12
           delete_tags: true
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: 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
 
       - name: Delete workflow runs
         uses: GitRML/delete-workflow-runs@main
