@@ -15,10 +15,10 @@ on:
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni
   DEVICE: CPH1861
-  DT_LINK: https://github.com/CPH1859/android_device_CPH1861_TWRP
-  DT_PATH: device/oppo/CPH1861
+  DT_LINK: https://github.com/Andver0/recovery-m10
+  DT_PATH: device/samsung/m10lte
   TARGET: recoveryimage
-  TZ: Asia/Kolkata
+  TZ: Europe/London
 
 jobs:
   build:
