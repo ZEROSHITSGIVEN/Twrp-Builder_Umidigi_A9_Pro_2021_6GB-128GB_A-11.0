@@ -58,11 +58,10 @@ jobs:
               . build/envsetup.sh &&lunch omni_$DEVICE-eng &&export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET
               sudo apt update && sudo apt install zip
               ls
-              cd devive/samsumg/m10lte
              
        - name: Save
          uses: actions/upload-artifact@v3
          with:
             name: my-artifact
-            path: /home/runner/work/ubuntu/ubuntu/work/a.zip
+            path: /home/runner/work/ubuntu/ubuntu/work/out/recovery.img
             retention-days: 5
