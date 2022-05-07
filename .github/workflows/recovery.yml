@@ -56,11 +56,12 @@ jobs:
          run: |
               cd work
               . build/envsetup.sh &&lunch omni_$DEVICE-eng &&export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET
-              pwd
+              sudo apt update && sudo apt install zip
+              zip -r a.zip /home/runner/work/ubuntu/ubuntu/work/*
              
        - name: Save
          uses: actions/upload-artifact@v3
          with:
             name: my-artifact
-            path: work/recovery-m10/*
+            path: /home/runner/work/ubuntu/ubuntu/work/a.zip
             retention-days: 5
