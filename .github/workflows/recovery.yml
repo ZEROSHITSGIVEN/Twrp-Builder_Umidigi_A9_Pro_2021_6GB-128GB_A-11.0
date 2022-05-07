@@ -64,5 +64,5 @@ jobs:
           tag_name: v0.1
           name: F2FS test
           files: | 
-            work/out/target/product/CPH1861/recovery.img
+            work/out/target/product/m10lte/recovery.img
             
