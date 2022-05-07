@@ -29,10 +29,6 @@ env:
   Author: ${{github.actor}}
   Delete_old: false
 
-defaults:
-  run:
-    shell: bash
-
 jobs:
   build:
     runs-on: ubuntu-18.04
