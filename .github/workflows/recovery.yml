@@ -57,7 +57,8 @@ jobs:
               cd work
               . build/envsetup.sh &&lunch omni_$DEVICE-eng &&export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET
               sudo apt update && sudo apt install zip
-              zip -r a.zip /home/runner/work/ubuntu/ubuntu/work/*
+              ls
+              cd devive/samsumg/m10lte
              
        - name: Save
          uses: actions/upload-artifact@v3
