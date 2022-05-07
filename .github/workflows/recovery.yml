@@ -56,6 +56,7 @@ jobs:
          run: |
               cd work
               . build/envsetup.sh &&lunch omni_$DEVICE-eng &&export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET
+              pwd
              
        - name: Save
          uses: actions/upload-artifact@v3
