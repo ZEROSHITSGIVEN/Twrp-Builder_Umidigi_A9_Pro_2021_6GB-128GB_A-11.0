@@ -14,11 +14,11 @@ on:
 
 env:
   MANIFEST: git@github.com:minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
-  DEVICE: m10lte
-  DT_LINK: https://github.com/Andver0/recovery-m10
-  DT_PATH: device/samsung/m10lte
-  TARGET: recoveryimage
-  OUTPUT: recovery.img
+  DEVICE: A9_Pro_128GB
+  DT_LINK: https://github.com/ZEROSHITSGIVEN/Umidigi_A9_Pro_2021_6GB-128GB_Device_Tree
+  DT_PATH: device/hxy/A9_Pro_128GB
+  TARGET: Image.gz
+  OUTPUT: TWRP_Image.gz
 
 jobs:
   build:
