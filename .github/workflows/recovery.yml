@@ -14,9 +14,9 @@ on:
 
 env:
   MANIFEST: git@github.com:minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
-  DEVICE: r9q
-  DT_LINK: https://github.com/klabit87/android_device_samsung_r9q
-  DT_PATH: device/samsung/r9q
+  DEVICE: m10lte
+  DT_LINK: https://github.com/Andver0/recovery-m10
+  DT_PATH: device/samsung/m10lte
   TARGET: recoveryimage
   OUTPUT: recovery.img
 
