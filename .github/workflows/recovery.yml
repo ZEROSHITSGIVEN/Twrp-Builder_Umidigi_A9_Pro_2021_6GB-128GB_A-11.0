@@ -15,9 +15,9 @@ on:
 env:
   MANIFEST: git@github.com:PitchBlackRecoveryProject/manifest_pb.git -b android-11.0
   DEVICE: A9_Pro_128GB
-  DT_LINK: Umidigi_A9_Pro_2021_6GB-128GB_Device_Tree
+  DT_LINK: https://github.com/ZEROSHITSGIVEN/Umidigi_A9_Pro_2021_6GB-128GB_Device_Tree
   DT_PATH: device/hxy/A9_Pro_128GB
-  TARGET: Image.gz
+  TARGET: recoveryimage
   OUTPUT: TWRP_Image.gz
 
 jobs:
